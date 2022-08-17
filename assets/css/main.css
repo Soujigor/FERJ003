@@ -2,6 +2,18 @@
   font-family: "Lato";
   src: url("/assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
 }
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Lato";
+  src: url("/assets/fonts/Lato/Lato-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: "RockSalt";
+  src: url("/assets/fonts/Rock_Salt/RockSalt-Regular.ttf") format("truetype");
+}
 body {
   margin: 0;
   padding: 0;
