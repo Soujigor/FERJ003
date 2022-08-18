@@ -1,35 +1,5 @@
-@font-face {
-    font-family: "Lato";
-    src: url("/assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Lato";
-    src: url("/assets/fonts/Lato/Lato-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "Lato";
-    src: url("/assets/fonts/Lato/Lato-Light.ttf") format("truetype");
-}
-
-@font-face {
-    font-family: "RockSalt";
-    src: url("/assets/fonts/Rock_Salt/RockSalt-Regular.ttf") format("truetype");
-}
+@import "reset.scss";
+@import "fonts.scss";
+@import "home.scss";
 
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Lato";
-
-    &hover {
-        cursor: pointer;
-        background-color: #f5f5f5;
-    }
-}
-
-* {
-    box-sizing: border-box;
-}
