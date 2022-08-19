@@ -64,10 +64,6 @@ p, h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-div, section, header {
-  display: flex;
-}
-
 @font-face {
   font-family: "Lato";
   src: url("/assets/fonts/Lato/Lato-Regular.ttf") format("truetype");
@@ -86,21 +82,44 @@ div, section, header {
   font-family: "RockSalt";
   src: url("/assets/fonts/Rock_Salt/RockSalt-Regular.ttf") format("truetype");
 }
-body.open header .menu-links {
+body {
+  font-family: "Lato";
+}
+body .hide-mobile {
+  display: none;
+}
+body .show-desktop {
+  display: none;
+}
+body a {
+  color: #fff;
+  text-decoration: none;
+}
+body ul {
+  padding: 0;
+}
+body ul li {
+  list-style: none;
+}
+body.open > header .menu-links {
   right: 0;
 }
 body > header {
   height: 100px;
   width: 100%;
-  background-color: #16161e;
+  background-color: #16161E;
   border-bottom: 2px solid #ccc;
   position: fixed;
   z-index: 2;
+  display: flex;
   align-items: center;
 }
 body > header .mobile-content {
   width: 100%;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+  margin: 0 25px;
 }
 body > header .mobile-content a#close-button {
   position: relative;
@@ -110,14 +129,14 @@ body > header .mobile-content .nav-desktop {
   display: none;
 }
 body > header .menu-links {
-  transition-duration: 0.5s;
-  transition-timing-function: ease-in-out;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
   width: 300px;
   height: 100%;
   position: fixed;
   top: 0;
   right: -300px;
-  background-color: #cacad2;
+  background-color: #CACAD2;
 }
 body > header .menu-links > a {
   margin: 15px;
@@ -134,6 +153,38 @@ body > header .menu-links ul {
 }
 body > header .menu-links ul li + li {
   margin-top: 40px;
+}
+
+@media (min-width: 768px) {
+  body .show-desktop {
+    display: block;
+  }
+  body .max-width {
+    max-width: 700px !important;
+  }
+  body header .search {
+    position: relative;
+  }
+  body header .search .path {
+    fill: #fff;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    width: 24px;
+  }
+  body header .search input {
+    width: 500px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1882352941);
+    color: #fff;
+    padding-left: 50px;
+    outline: 0;
+    border: none;
+    border-radius: 20px;
+  }
+  body header .search input::placeholder {
+    color: #e1e1e1;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

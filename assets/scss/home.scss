@@ -1,26 +1,49 @@
+body{
 
-body {
+    font-family: "Lato";
+    .hide-mobile {
+        display: none;
+    }
+    
+    .show-desktop {
+        display: none;
+    }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    ul {
+        padding: 0;
+        li {
+            list-style: none;
+        }
+    }
 
     &.open {
-        header {
-            .menu-links {
+        > header {
+            .menu-links{
                 right: 0;
             }
         }
     }
 
-
     > header {
         height: 100px;
         width: 100%;
-        background-color: #16161e;
+        background-color: #16161E;
         border-bottom: 2px solid #ccc;
         position: fixed;
         z-index: 2;
+        display: flex;
         align-items: center;
         .mobile-content {
             width: 100%;
+            display: flex;
             align-items: center;
+            justify-content: space-between;
+            margin: 0 25px;
             a#close-button {
                 position: relative;
                 z-index: 2;
@@ -30,14 +53,14 @@ body {
             }
         }
         .menu-links {
-            transition-duration: 0.5s;
-            transition-timing-function: ease-in-out;
+            transition-duration: 0.2s;
+            transition-timing-function: ease-out;
             width: 300px;
             height: 100%;
             position: fixed;
             top: 0;
             right: -300px;
-            background-color: #cacad2;
+            background-color: #CACAD2;
             > a {
                 margin: 15px;
                 width: 48px;
@@ -50,11 +73,55 @@ body {
                 padding: 0;
                 font-size: 18px;
                 list-style: none;
-                li + li { // seletor de irmão adjacente
+                li + li {
                     margin-top: 40px;
                 }
             }
         }
-    }
+     }
 }
 
+// tablet
+@media (min-width: 768px) {
+    body {
+        .show-desktop {
+            display: block
+        }
+        .max-width {
+            max-width: 700px!important;
+        }
+        header {
+            .search {
+                position: relative;              
+                .path {
+                    fill: #fff;
+                    position: absolute;
+                    top: 10px;
+                    left: 15px;
+                    width: 24px;
+                }
+
+                input {
+                    width: 500px;
+                    height: 40px;
+                    background-color: #ffffff30;
+                    color: #fff;
+                    padding-left: 50px;
+                    outline: 0;
+                    border: none;
+                    border-radius: 20px;
+                    &::placeholder{
+                        color: #e1e1e1;
+                    }
+                }
+            }
+
+        }
+    }
+    
+}
+
+// desktop e monitores maiores
+@media (min-width: 1200px) {
+    
+}
