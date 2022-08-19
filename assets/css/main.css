@@ -154,6 +154,20 @@ body > header .menu-links ul {
 body > header .menu-links ul li + li {
   margin-top: 40px;
 }
+body section.hero {
+  background-image: url("../images/background-banner-smartphone.webp");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  height: 100vh;
+}
+body section.hero::before {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  content: "";
+  background-image: linear-gradient(#161618, rgba(22, 22, 24, 0.5647058824));
+}
 
 @media (min-width: 768px) {
   body .show-desktop {
@@ -184,6 +198,18 @@ body > header .menu-links ul li + li {
   }
   body header .search input::placeholder {
     color: #e1e1e1;
+  }
+  body section.hero {
+    background-image: url("../images/background-banner-tablet.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+}
+@media (min-width: 1200px) {
+  body section.hero {
+    background-image: url("../images/background-banner-desktop.webp");
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 }
 
