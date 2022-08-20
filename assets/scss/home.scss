@@ -1,57 +1,66 @@
-body{
+// div, section,header {
+//     display: flex;
+// }
+// DRY - Don't Repeat Yourself
+body {
 
     font-family: "Lato";
+
     .hide-mobile {
         display: none;
     }
-    
+
     .show-desktop {
         display: none;
     }
 
     a {
-        color: #fff;
+        color: var(--text);
         text-decoration: none;
     }
 
     ul {
         padding: 0;
+
         li {
             list-style: none;
         }
     }
 
     &.open {
-        > header {
-            .menu-links{
+        >header {
+            .menu-links {
                 right: 0;
             }
         }
     }
 
-    > header {
+    >header {
         height: 100px;
         width: 100%;
-        background-color: #16161E;
-        border-bottom: 2px solid #ccc;
+        background-color: #161618;
         position: fixed;
         z-index: 2;
         display: flex;
         align-items: center;
+
         .mobile-content {
             width: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin: 0 25px;
+
             a#close-button {
                 position: relative;
                 z-index: 2;
             }
+
             .nav-desktop {
                 display: none;
             }
         }
+
         .menu-links {
             transition-duration: 0.2s;
             transition-timing-function: ease-out;
@@ -61,55 +70,263 @@ body{
             top: 0;
             right: -300px;
             background-color: #CACAD2;
-            > a {
+
+            >a {
                 margin: 15px;
                 width: 48px;
                 height: 48px;
                 float: right;
             }
+
             ul {
                 margin: 150px 0;
                 text-align: center;
                 padding: 0;
                 font-size: 18px;
                 list-style: none;
-                li + li {
+
+                li+li {
                     margin-top: 40px;
                 }
             }
         }
-     }
+    }
 
-    section.hero{
+    section.hero {
         background-image: url("../images/background-banner-smartphone.webp");
         background-repeat: no-repeat;
         background-position: center center;
         background-size: cover;
         height: 100vh;
+
         &::before {
             width: 100%;
             height: 100%;
             position: absolute;
             content: "";
-            background-image: linear-gradient(#161618, #16161890);
+            background-image: linear-gradient(#161618, #16161800);
         }
-     }
+
+        .destak {
+            position: relative;
+            padding-top: 100px;
+            color: var(--text);
+            height: 100vh;
+
+            .title {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: calc(100vh - 200px);
+
+                .wrapper_content {
+                    .index_slider {
+                        display: none;
+                    }
+
+                    .wrapper_title {
+                        h1 {
+                            display: flex;
+                            flex-direction: column;
+                            font-size: 50px;
+
+                            span {
+                                font-family: "RockSalt";
+                                font-size: 150px;
+                            }
+                        }
+
+                        h2 {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .links {
+                background-color: #131C21;
+                opacity: .8;
+                height: 100px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                .link-item {
+                    display: none;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    color: var(--main);
+
+                    svg {
+                        fill: var(--text);
+                        margin-right: 22px;
+                        height: 48px;
+                        width: 48px;
+                    }
+
+                    h3,
+                    h4 {
+                        font-weight: 300;
+                        margin: 0;
+                    }
+
+                    h3 {
+                        font-size: 25px;
+                        margin-bottom: 2px;
+                    }
+
+                    h4 {
+                        font-size: 15px;
+                        line-height: 15px;
+                    }
+
+                    &:first-child {
+                        display: flex;
+                    }
+                }
+
+                .arrow {
+                    margin-left: 10px;
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+
+    section.wonders {
+        padding: 48px;
+        padding-top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h2 {
+                font-size: 44px;
+                margin-top: 23px;
+                text-align: center;
+
+                @media (min-width: 768px) {
+                    font-size: 48px;
+                }
+            }
+
+            hr {
+                border: 0;
+                width: 100px;
+                height: 4px;
+                margin-top: 10px;
+                background-color: var(--main);
+            }
+
+            p {
+                font-size: 24px;
+                text-align: center;
+                margin-top: 13px;
+            }
+        }
+
+        .wonders_wrapper {
+            margin-top: 67px;
+            // display: grid;
+            gap: 40px;
+            display: grid;
+            grid-template-columns: repeat(1fr);
+            flex-direction: column;
+            align-items: center;
+            width: fit-content;
+
+            @media (min-width: 768px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media (min-width: 1588px) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .wonder_wrapper_item {
+                position: relative;
+                width: fit-content;
+
+                // img {
+                //     width: 290px;
+                // }
+
+                .text_wonder {
+                    position: absolute;
+                    background-color: #10191e88;
+                    bottom: 0;
+                    padding: 10px 20px;
+                    width: 100%;
+
+                    svg {
+                        height: 24px;
+                        width: 24px;
+
+                        path {
+                            fill: var(--text);
+                        }
+                    }
+
+                    .header_wonder {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+
+                        h2 {
+                            margin-left: 4px;
+                            margin-top: 0;
+                            margin-bottom: 0;
+                            font-size: 24px;
+                        }
+                    }
+
+                    .content_wonder {
+                        font-size: 16px;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
 }
 
+
+
+
+
+// 3 coisas formam o pilar do Responsive Web Design.
+// 1 - O site deve ser capaz de renderizar o site em dispositivos móveis. - meta viewport.
+// 2 - Definir os breakpoints para cada dispositivo. - media queries.
+// 3 - Definir o que muda, quando muda e como muda. - dentro media queries.
+
+// mobile first -  Comece com o mobile.
 // tablet
 @media (min-width: 768px) {
     body {
         .show-desktop {
-            display: block
+            display: block;
         }
+
         .max-width {
-            max-width: 700px!important;
+            max-width: 700px !important;
         }
+
         header {
             .search {
-                position: relative;              
+                position: relative;
+
                 .path {
-                    fill: #fff;
+                    fill: var(--text);
                     position: absolute;
                     top: 10px;
                     left: 15px;
@@ -120,38 +337,192 @@ body{
                     width: 500px;
                     height: 40px;
                     background-color: #ffffff30;
-                    color: #fff;
+                    color: var(--text);
                     padding-left: 50px;
                     outline: 0;
                     border: none;
                     border-radius: 20px;
-                    &::placeholder{
-                        color: #e1e1e1;
+
+                    &::placeholder {
+                        color: var(--text);
                     }
                 }
             }
-
         }
-        section.hero{
+
+        section.hero {
             background-image: url("../images/background-banner-tablet.webp");
             background-repeat: no-repeat;
             background-position: center center;
-            
-         }
+            background-size: cover;
+
+            .destak {
+                .title {
+                    position: relative;
+
+                    .wrapper_content {
+                        .wrapper_title {
+                            position: relative;
+
+                            h1 {
+                                flex-direction: row;
+                                align-items: center;
+                                font-size: 100px;
+
+                                span {
+                                    margin-left: 45px;
+                                }
+                            }
+
+                            h2 {
+                                position: absolute;
+                                display: flex;
+                                bottom: 25px;
+                                left: 100px;
+                                font-weight: 300;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+
+                }
+
+                .links {
+                    .link-item {
+                        h3 {
+                            font-size: 30px;
+                        }
+
+                        h4 {
+                            font-size: 18px;
+                            font-weight: 400;
+                        }
+
+                        &:nth-child(2) {
+                            display: flex;
+                            margin-left: 36px;
+                        }
+                    }
+                }
+
+                .arrow {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
     }
-    
 }
 
-// desktop e monitores maiores
-@media (min-width: 1200px) {
-    body{
-        section.hero{
+// desktop e monitores maiores.
+@media (min-width:1200px) {
+    body {
+        section.hero {
             background-image: url("../images/background-banner-desktop.webp");
             background-repeat: no-repeat;
             background-position: center center;
-            
-            
-         }
+            background-size: cover;
+
+            .destak {
+                .title {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    .wrapper_content {
+                        position: relative;
+                        width: 1000px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        .index_slider {
+                            position: absolute;
+                            display: flex;
+                            flex-direction: column;
+                            left: 0;
+                            padding: 0;
+                            margin: 0;
+
+                            .item_slider_index {
+                                margin-bottom: 10px;
+                                margin-top: 5px;
+
+                                span {
+                                    font-weight: bold;
+                                    font-size: 15px;
+                                }
+
+                                .bar {
+                                    height: 0;
+                                }
+
+                                &.active {
+                                    color: var(--main);
+                                    margin-bottom: 0;
+
+                                    .bar {
+                                        margin-top: 2px;
+                                        margin-bottom: 8px;
+                                        height: 100px;
+                                        width: 2px;
+                                        background-color: #FFF;
+                                        margin: 0 auto;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .links {
+                    .link-item {
+                        color: var(--text);
+
+                        h3 {
+                            font-size: 28px;
+                        }
+
+                        svg {
+                            path {
+                                fill: var(--text);
+                            }
+                        }
+
+                        &.selected {
+                            color: var(--main);
+
+                            svg {
+                                path {
+                                    fill: var(--main);
+                                }
+                            }
+                        }
+
+                        &:nth-child(3),
+                        &:nth-child(4) {
+                            display: flex;
+                            margin-left: 36px;
+                        }
+
+                        &:last-child {
+                            margin-left: 36px;
+                        }
+                    }
+
+                }
+
+                .arrow {
+                    display: none;
+                }
+            }
+        }
     }
-    
 }
+
+// 4k e monitores Apple - iMac, Macbook, Mac Pro, etc.
+// @media (min-width:2520px){
+
+// }
+
+// Nos EUA monitores corporativos - 1100x 768, 1333x768, 1440x900, 1600x1200, etc.
