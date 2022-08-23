@@ -482,6 +482,7 @@ body {
                     grid-gap: 23px;
 
                     >div {
+                        display: flex;
                         width: 100%;
                         margin: 0;
 
@@ -498,7 +499,7 @@ body {
 
                     #img_1 {
                         grid-column: 1 / 1;
-                        grid-row: 1 / 4;
+                        grid-row: 1 / 5;
                     }
 
                     #img_2 {
@@ -508,7 +509,7 @@ body {
 
                     #img_3 {
                         grid-column: 1 / 1;
-                        grid-row: 4 / 10;
+                        grid-row: 5 / 10;
                     }
 
                     #img_4 {
