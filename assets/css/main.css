@@ -93,6 +93,15 @@ p, h1, h2, h3, h4, h5, h6 {
 body {
   font-family: "Lato";
 }
+body .left-arrow svg {
+  transform: rotate(180deg);
+}
+body .toggleMenu {
+  transition-duration: 0.5s;
+}
+body.open .toggleMenu {
+  transform: rotate(360deg);
+}
 body .hide-mobile {
   display: none;
 }
@@ -136,7 +145,7 @@ body > header .mobile-content .nav-desktop {
   display: none;
 }
 body > header .menu-links {
-  transition-duration: 0.2s;
+  transition-duration: 1s;
   transition-timing-function: ease-out;
   width: 300px;
   height: 100%;
@@ -203,7 +212,7 @@ body main#home section.hero .destak .title .wrapper_content .wrapper_title h1 sp
 body main#home section.hero .destak .title .wrapper_content .wrapper_title h2 {
   display: none;
 }
-body main#home section.hero .destak .links {
+body main#home section.hero .destak .links, body main#home section.hero .destak .slider-items {
   background-color: #131C21;
   opacity: 0.8;
   height: 100px;
@@ -212,7 +221,7 @@ body main#home section.hero .destak .links {
   justify-content: center;
   align-items: center;
 }
-body main#home section.hero .destak .links .link-item {
+body main#home section.hero .destak .links .link-item, body main#home section.hero .destak .slider-items .link-item {
   display: none;
   flex-direction: row;
   justify-content: center;
@@ -220,29 +229,30 @@ body main#home section.hero .destak .links .link-item {
   height: 100%;
   color: var(--main);
 }
-body main#home section.hero .destak .links .link-item svg {
+body main#home section.hero .destak .links .link-item svg, body main#home section.hero .destak .slider-items .link-item svg {
   fill: var(--text);
   margin-right: 22px;
   height: 48px;
   width: 48px;
 }
 body main#home section.hero .destak .links .link-item h3,
-body main#home section.hero .destak .links .link-item h4 {
+body main#home section.hero .destak .links .link-item h4, body main#home section.hero .destak .slider-items .link-item h3,
+body main#home section.hero .destak .slider-items .link-item h4 {
   font-weight: 300;
   margin: 0;
 }
-body main#home section.hero .destak .links .link-item h3 {
+body main#home section.hero .destak .links .link-item h3, body main#home section.hero .destak .slider-items .link-item h3 {
   font-size: 25px;
   margin-bottom: 2px;
 }
-body main#home section.hero .destak .links .link-item h4 {
+body main#home section.hero .destak .links .link-item h4, body main#home section.hero .destak .slider-items .link-item h4 {
   font-size: 15px;
   line-height: 15px;
 }
-body main#home section.hero .destak .links .link-item:first-child {
+body main#home section.hero .destak .links .link-item:first-child, body main#home section.hero .destak .slider-items .link-item:first-child {
   display: flex;
 }
-body main#home section.hero .destak .links .arrow {
+body main#home section.hero .destak .links .arrow, body main#home section.hero .destak .slider-items .arrow {
   margin-left: 10px;
   position: absolute;
   right: 0;
@@ -645,23 +655,23 @@ body footer .content .logo {
 body footer .content .logo img {
   width: 277px;
 }
-body footer .content .links ul {
+body footer .content .links ul, body footer .content .slider-items ul {
   margin-bottom: 75px;
 }
-body footer .content .links ul li {
+body footer .content .links ul li, body footer .content .slider-items ul li {
   font-size: 24px;
   font-weight: bold;
   margin-bottom: 30px;
   cursor: pointer;
   width: fit-content;
 }
-body footer .content .links ul li:hover a {
+body footer .content .links ul li:hover a, body footer .content .slider-items ul li:hover a {
   text-decoration: underline;
 }
-body footer .content .links ul li:last-child {
+body footer .content .links ul li:last-child, body footer .content .slider-items ul li:last-child {
   margin-bottom: 0;
 }
-body footer .content .links ul li.title {
+body footer .content .links ul li.title, body footer .content .slider-items ul li.title {
   cursor: unset;
   font-size: 36px;
   color: var(--main);
@@ -685,22 +695,22 @@ body footer .copyright span:last-child {
   margin-bottom: 0;
 }
 @media (min-width: 768px) {
-  body footer .content .links {
+  body footer .content .links, body footer .content .slider-items {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
     flex: 0 1 150px;
   }
-  body footer .content .links ul {
+  body footer .content .links ul, body footer .content .slider-items ul {
     width: 300px;
   }
 }
 @media (min-width: 930px) {
-  body footer .content .links ul {
+  body footer .content .links ul, body footer .content .slider-items ul {
     margin-right: 30px;
   }
-  body footer .content .links ul:last-child {
+  body footer .content .links ul:last-child, body footer .content .slider-items ul:last-child {
     margin-right: 0;
   }
   body footer .copyright {
@@ -725,7 +735,7 @@ body footer .copyright span:last-child {
     margin-bottom: 0;
     margin-right: 80px;
   }
-  body footer .content .links {
+  body footer .content .links, body footer .content .slider-items {
     flex-wrap: nowrap;
     flex-direction: row;
     width: 100%;
@@ -856,26 +866,26 @@ body footer .copyright span:last-child {
     background-color: #FFF;
     margin: 0 auto;
   }
-  body main#home section.hero .destak .links .link-item {
+  body main#home section.hero .destak .links .link-item, body main#home section.hero .destak .slider-items .link-item {
     color: var(--text);
   }
-  body main#home section.hero .destak .links .link-item h3 {
+  body main#home section.hero .destak .links .link-item h3, body main#home section.hero .destak .slider-items .link-item h3 {
     font-size: 28px;
   }
-  body main#home section.hero .destak .links .link-item svg path {
+  body main#home section.hero .destak .links .link-item svg path, body main#home section.hero .destak .slider-items .link-item svg path {
     fill: var(--text);
   }
-  body main#home section.hero .destak .links .link-item.selected {
+  body main#home section.hero .destak .links .link-item.selected, body main#home section.hero .destak .slider-items .link-item.selected {
     color: var(--main);
   }
-  body main#home section.hero .destak .links .link-item.selected svg path {
+  body main#home section.hero .destak .links .link-item.selected svg path, body main#home section.hero .destak .slider-items .link-item.selected svg path {
     fill: var(--main);
   }
-  body main#home section.hero .destak .links .link-item:nth-child(3), body main#home section.hero .destak .links .link-item:nth-child(4) {
+  body main#home section.hero .destak .links .link-item:nth-child(3), body main#home section.hero .destak .links .link-item:nth-child(4), body main#home section.hero .destak .slider-items .link-item:nth-child(3), body main#home section.hero .destak .slider-items .link-item:nth-child(4) {
     display: flex;
     margin-left: 36px;
   }
-  body main#home section.hero .destak .links .link-item:last-child {
+  body main#home section.hero .destak .links .link-item:last-child, body main#home section.hero .destak .slider-items .link-item:last-child {
     margin-left: 36px;
   }
   body main#home section.hero .destak .arrow {
